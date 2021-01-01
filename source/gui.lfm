@@ -1,0 +1,606 @@
+object Form1: TForm1
+  Left = 346
+  Height = 786
+  Top = 113
+  Width = 1680
+  Caption = 'Chris Rorden''s fMRIsim'
+  ClientHeight = 756
+  ClientWidth = 1680
+  DesignTimePPI = 144
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  OnResize = EditChange
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.0.0.2'
+  object Image1: TImage
+    Left = 0
+    Height = 628
+    Top = 128
+    Width = 1680
+    Align = alClient
+    AutoSize = True
+    Proportional = True
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 128
+    Top = 0
+    Width = 1680
+    Align = alTop
+    AutoSize = True
+    ClientHeight = 128
+    ClientWidth = 1680
+    ParentFont = False
+    TabOrder = 0
+    object fMRIpanel: TPanel
+      AnchorSideLeft.Control = AdvancedCheck
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = AdvancedCheck
+      AnchorSideTop.Side = asrCenter
+      Left = 283
+      Height = 40
+      Top = 46
+      Width = 954
+      AutoSize = True
+      BorderSpacing.Left = 6
+      BevelOuter = bvNone
+      BorderWidth = 2
+      ClientHeight = 40
+      ClientWidth = 954
+      ParentFont = False
+      TabOrder = 0
+      Visible = False
+      object CondEdit: TEdit
+        AnchorSideLeft.Control = Label3
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = TREdit
+        AnchorSideTop.Side = asrCenter
+        Left = 483
+        Height = 33
+        Top = 5
+        Width = 120
+        BorderSpacing.Left = 6
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 0
+        Text = '2'
+      end
+      object Label3: TLabel
+        AnchorSideLeft.Control = VolEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = TREdit
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 25
+        Top = 9
+        Width = 86
+        BorderSpacing.Left = 6
+        Caption = 'Conditions'
+        ParentColor = False
+        ParentFont = False
+      end
+      object VolEdit: TEdit
+        AnchorSideLeft.Control = Label2
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = TREdit
+        AnchorSideTop.Side = asrCenter
+        Left = 265
+        Height = 33
+        Top = 5
+        Width = 120
+        BorderSpacing.Left = 6
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 1
+        Text = '120'
+      end
+      object Label2: TLabel
+        AnchorSideLeft.Control = TREdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = TREdit
+        AnchorSideTop.Side = asrCenter
+        Left = 191
+        Height = 25
+        Top = 9
+        Width = 68
+        BorderSpacing.Left = 6
+        Caption = 'Volumes'
+        ParentColor = False
+        ParentFont = False
+      end
+      object TREdit: TEdit
+        AnchorSideLeft.Control = Label1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = fMRIpanel
+        Left = 65
+        Height = 33
+        Top = 5
+        Width = 120
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 3
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 2
+        Text = '2000'
+      end
+      object Label1: TLabel
+        AnchorSideLeft.Control = fMRIpanel
+        AnchorSideTop.Control = TREdit
+        AnchorSideTop.Side = asrCenter
+        Left = 5
+        Height = 25
+        Top = 9
+        Width = 54
+        BorderSpacing.Left = 3
+        Caption = 'TR(ms)'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label4: TLabel
+        AnchorSideLeft.Control = CondEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = TREdit
+        AnchorSideTop.Side = asrCenter
+        Left = 609
+        Height = 25
+        Top = 9
+        Width = 64
+        BorderSpacing.Left = 6
+        Caption = 'meanISI'
+        ParentColor = False
+        ParentFont = False
+      end
+      object MeanISIEdit: TEdit
+        AnchorSideLeft.Control = Label4
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = TREdit
+        AnchorSideTop.Side = asrCenter
+        Left = 679
+        Height = 33
+        Top = 5
+        Width = 120
+        BorderSpacing.Left = 6
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 3
+        Text = '1000'
+      end
+      object RestCheck: TCheckBox
+        AnchorSideLeft.Control = MeanISIEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = TREdit
+        AnchorSideTop.Side = asrCenter
+        Left = 805
+        Height = 29
+        Top = 7
+        Width = 147
+        BorderSpacing.Left = 6
+        Caption = 'Rest Condition'
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 4
+      end
+    end
+    object EventPanel: TPanel
+      AnchorSideLeft.Control = DesignDrop
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      Left = 325
+      Height = 40
+      Top = 1
+      Width = 555
+      AutoSize = True
+      BorderSpacing.Left = 6
+      BevelOuter = bvNone
+      BorderWidth = 2
+      ClientHeight = 40
+      ClientWidth = 555
+      ParentFont = False
+      TabOrder = 1
+      Visible = False
+      object Label5: TLabel
+        AnchorSideLeft.Control = EventPanel
+        AnchorSideTop.Control = MinISIEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 5
+        Height = 25
+        Top = 9
+        Width = 50
+        BorderSpacing.Left = 3
+        Caption = 'MinISI'
+        ParentColor = False
+        ParentFont = False
+      end
+      object MinISIEdit: TEdit
+        AnchorSideLeft.Control = Label5
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = EventPanel
+        Left = 61
+        Height = 33
+        Top = 5
+        Width = 120
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 3
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 0
+        Text = '500'
+      end
+      object Label7: TLabel
+        AnchorSideLeft.Control = MinISIEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinISIEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 187
+        Height = 25
+        Top = 9
+        Width = 74
+        BorderSpacing.Left = 6
+        Caption = 'Iterations'
+        ParentColor = False
+        ParentFont = False
+      end
+      object IterationEdit: TEdit
+        AnchorSideLeft.Control = Label7
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinISIEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 267
+        Height = 33
+        Top = 5
+        Width = 120
+        BorderSpacing.Left = 6
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 1
+        Text = '100'
+      end
+      object CounterbalanceCheck: TCheckBox
+        AnchorSideLeft.Control = IterationEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinISIEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 393
+        Height = 29
+        Top = 7
+        Width = 160
+        BorderSpacing.Left = 6
+        Caption = 'Counter-balance'
+        Checked = True
+        OnChange = EditChange
+        ParentFont = False
+        State = cbChecked
+        TabOrder = 2
+      end
+    end
+    object BlockPanel: TPanel
+      AnchorSideLeft.Control = DesignDrop
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      Left = 325
+      Height = 40
+      Top = 1
+      Width = 486
+      AutoSize = True
+      BorderSpacing.Left = 6
+      BevelOuter = bvNone
+      BorderWidth = 2
+      ClientHeight = 40
+      ClientWidth = 486
+      ParentFont = False
+      TabOrder = 2
+      Visible = False
+      object Label6: TLabel
+        AnchorSideLeft.Control = BlockPanel
+        AnchorSideTop.Control = PermuteEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 25
+        Top = 9
+        Width = 104
+        BorderSpacing.Left = 6
+        Caption = 'Permutations'
+        ParentColor = False
+        ParentFont = False
+      end
+      object PermuteEdit: TEdit
+        AnchorSideLeft.Control = Label6
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = BlockPanel
+        Left = 118
+        Height = 33
+        Top = 5
+        Width = 120
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 3
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 0
+        Text = '0'
+      end
+      object Label8: TLabel
+        AnchorSideLeft.Control = PermuteEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = PermuteEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 244
+        Height = 25
+        Top = 9
+        Width = 114
+        BorderSpacing.Left = 6
+        Caption = 'BlockTime(ms)'
+        ParentColor = False
+        ParentFont = False
+      end
+      object OptimalBlockMSECEdit: TEdit
+        AnchorSideLeft.Control = Label8
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = PermuteEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 33
+        Top = 5
+        Width = 120
+        BorderSpacing.Left = 6
+        OnChange = EditChange
+        ParentFont = False
+        TabOrder = 1
+        Text = '12000'
+      end
+    end
+    object DoubleGammaCheck: TCheckBox
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = DesignDrop
+      AnchorSideTop.Side = asrBottom
+      Left = 7
+      Height = 29
+      Top = 52
+      Width = 155
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 12
+      Caption = 'Double Gamma'
+      Checked = True
+      OnChange = DoubleGammaCheckChange
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 3
+    end
+    object AdvancedCheck: TCheckBox
+      AnchorSideLeft.Control = DoubleGammaCheck
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = DoubleGammaCheck
+      Left = 168
+      Height = 29
+      Top = 52
+      Width = 109
+      BorderSpacing.Left = 6
+      Caption = 'Advanced'
+      OnChange = AdvancedCheckChange
+      ParentFont = False
+      TabOrder = 4
+    end
+    object DesignDrop: TComboBox
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      Left = 7
+      Height = 33
+      Top = 7
+      Width = 312
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      ItemHeight = 25
+      ItemIndex = 0
+      Items.Strings = (
+        'Show HRF'
+        'Block'
+        'Event fixed ISI'
+        'Event exponential ISI'
+        'Event random ISI'
+      )
+      OnChange = DesignDropChange
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 5
+      Text = 'Show HRF'
+    end
+    object AdvancedPanel: TPanel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = DoubleGammaCheck
+      AnchorSideTop.Side = asrBottom
+      Left = 1
+      Height = 43
+      Top = 84
+      Width = 1063
+      AutoSize = True
+      BorderSpacing.Top = 3
+      BevelOuter = bvNone
+      BorderWidth = 2
+      ClientHeight = 43
+      ClientWidth = 1063
+      ParentFont = False
+      TabOrder = 6
+      Visible = False
+      object delay1: TEdit
+        AnchorSideLeft.Control = Label9
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AdvancedPanel
+        Left = 87
+        Height = 33
+        Top = 8
+        Width = 108
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 6
+        OnChange = HRFChange
+        ParentFont = False
+        TabOrder = 0
+        Text = '6000'
+      end
+      object Label9: TLabel
+        AnchorSideLeft.Control = AdvancedPanel
+        AnchorSideTop.Control = delay1
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 25
+        Top = 12
+        Width = 73
+        BorderSpacing.Left = 6
+        Caption = '1st Delay'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label11: TLabel
+        AnchorSideLeft.Control = delay1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = delay1
+        AnchorSideTop.Side = asrCenter
+        Left = 201
+        Height = 25
+        Top = 12
+        Width = 113
+        BorderSpacing.Left = 6
+        Caption = '1st Dispersion'
+        ParentColor = False
+        ParentFont = False
+      end
+      object disp1: TEdit
+        AnchorSideLeft.Control = Label11
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = delay1
+        AnchorSideTop.Side = asrCenter
+        Left = 320
+        Height = 33
+        Top = 8
+        Width = 108
+        BorderSpacing.Left = 6
+        OnChange = HRFChange
+        ParentFont = False
+        TabOrder = 1
+        Text = '1000'
+      end
+      object Label10: TLabel
+        AnchorSideLeft.Control = disp1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = delay1
+        AnchorSideTop.Side = asrCenter
+        Left = 434
+        Height = 25
+        Top = 12
+        Width = 80
+        BorderSpacing.Left = 6
+        Caption = '2nd Delay'
+        ParentColor = False
+        ParentFont = False
+      end
+      object delay2: TEdit
+        AnchorSideLeft.Control = Label10
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = delay1
+        AnchorSideTop.Side = asrCenter
+        Left = 520
+        Height = 33
+        Top = 8
+        Width = 108
+        BorderSpacing.Left = 6
+        OnChange = HRFChange
+        ParentFont = False
+        TabOrder = 2
+        Text = '16000'
+      end
+      object Label12: TLabel
+        AnchorSideLeft.Control = delay2
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = delay1
+        AnchorSideTop.Side = asrCenter
+        Left = 634
+        Height = 25
+        Top = 12
+        Width = 120
+        BorderSpacing.Left = 6
+        Caption = '2nd Dispersion'
+        ParentColor = False
+        ParentFont = False
+      end
+      object disp2: TEdit
+        AnchorSideLeft.Control = Label12
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = delay1
+        AnchorSideTop.Side = asrCenter
+        Left = 760
+        Height = 33
+        Top = 8
+        Width = 108
+        BorderSpacing.Left = 6
+        OnChange = HRFChange
+        ParentFont = False
+        TabOrder = 3
+        Text = '1000'
+      end
+      object Label13: TLabel
+        AnchorSideLeft.Control = disp2
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = delay1
+        AnchorSideTop.Side = asrCenter
+        Left = 874
+        Height = 25
+        Top = 12
+        Width = 73
+        BorderSpacing.Left = 6
+        Caption = '1/2 Ratio'
+        ParentColor = False
+        ParentFont = False
+      end
+      object ratio1v2: TEdit
+        AnchorSideLeft.Control = Label13
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = disp1
+        AnchorSideTop.Side = asrCenter
+        Left = 953
+        Height = 33
+        Top = 8
+        Width = 108
+        BorderSpacing.Left = 6
+        OnChange = HRFChange
+        ParentFont = False
+        TabOrder = 4
+        Text = '6'
+      end
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 600
+    OnTimer = Timer1Timer
+    left = 96
+    top = 276
+  end
+  object MainMenu1: TMainMenu
+    left = 192
+    top = 276
+    object File1: TMenuItem
+      Caption = 'File'
+      object Export1: TMenuItem
+        Caption = 'Export Conditions'
+        OnClick = Export1Click
+      end
+      object Export2: TMenuItem
+        Caption = 'Export Convolved Data'
+        OnClick = Export2Click
+      end
+    end
+    object EditMenu: TMenuItem
+      Caption = 'Edit'
+      object CopyMenu: TMenuItem
+        Caption = 'Copy'
+        OnClick = CopyMenuClick
+      end
+    end
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 600
+    OnTimer = Timer2Timer
+    left = 288
+    top = 276
+  end
+end
