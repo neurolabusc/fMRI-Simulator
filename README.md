@@ -12,7 +12,7 @@ This software can generate convolved models for a few basic designs, and also al
 #### Installation
 
 The fmrisim software runs on Windows, Linux and macOS computers. You can download this repository and compile it yourself using [Lazarus](https://www.lazarus-ide.org). Alternatively, you can download a pre-compiled release:
- - [See the latest release](/releases/latest)
+ - [See the latest release](https://github.com/neurolabusc/fMRI-Simulator/releases)
 
 
 #### Top toolbar
